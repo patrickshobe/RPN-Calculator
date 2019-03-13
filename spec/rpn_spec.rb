@@ -3,30 +3,37 @@ require './lib/rpn'
 
 describe 'Active Spec' do
   it '#calculate addition' do
-    calc = RPNActive.new
+    calc = RPN.new
     expect(calc.calculate(2, 2, '+')).to eq(4)
   end
   it '#calculate subtraction' do
-    calc = RPNActive.new
+    calc = RPN.new
     expect(calc.calculate(2, 2, '-')).to eq(0)
   end
   it '#calculate multiplication' do
-    calc = RPNActive.new
+    calc = RPN.new
     expect(calc.calculate(2, 2, '*')).to eq(4)
   end
   it '#calculate division' do
-    calc = RPNActive.new
+    calc = RPN.new
     expect(calc.calculate(10, 2, '/')).to eq(5)
   end
   it '#calculate floats' do
-    calc = RPNActive.new
+    calc = RPN.new
     expect(calc.calculate(10, 2.5, '+')).to eq(12.5)
   end
   it '#calculate multiple times' do
-    calc = RPNActive.new
+    calc = RPN.new
     expect(calc.calculate(10, 2, '/')).to eq(5)
     expect(calc.calculate(10, '+')).to eq(15)
   end
-
+  it '#calculate negative numbers' do
+    calc = RPN.new
+    expect(calc.calculate(2, -4, '+')).to eq(-2)
+  end
+  it "#calculate doesn't divide by 0" do
+    calc = RPN.new
+    expect(calc.calculate(10, 0, '/')).to be_a(Float)
+  end
 end
 
