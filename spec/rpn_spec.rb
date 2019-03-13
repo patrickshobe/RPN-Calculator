@@ -27,5 +27,9 @@ describe 'Active Spec' do
     expect(calc.calculate(10, 2, '/')).to eq(5)
     expect(calc.calculate(10, '+')).to eq(15)
   end
+  it '#calculate negative numbers' do
+    calc = RPN.new
+    expect(calc.calculate(2, -4, '+')).to eq(-2)
+  end
 end
 
