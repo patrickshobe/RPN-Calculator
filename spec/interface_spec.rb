@@ -8,7 +8,7 @@ it 'should exist' do
   end
   it 'should greet new users' do
     interface = Interface.new
-    expect(STDOUT).to receive(:puts).with("Welcome to RPN Calculator\nPress q/Q to quit")
+    expect(STDOUT).to receive(:puts).with("Welcome to the Reverse Polish Notation Calculator\nPress q/Q to quit")
     interface.welcome
   end
   it '#validate_digit success' do
