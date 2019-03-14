@@ -4,6 +4,6 @@ class RPN
   end
 
   def calculate(left = @answer, right, operator)
-    @answer = left.to_f.send(operator, right.to_f)
+    @answer = left.send(operator, right)
   end
 end
