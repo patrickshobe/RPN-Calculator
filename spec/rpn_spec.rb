@@ -1,7 +1,7 @@
 require 'spec_helper'
 require './lib/rpn'
 
-describe 'Active Spec' do
+describe 'RPN Spec' do
   it '#calculate addition' do
     calc = RPN.new
     expect(calc.calculate(2, 2, '+')).to eq(4)
@@ -30,10 +30,6 @@ describe 'Active Spec' do
   it '#calculate negative numbers' do
     calc = RPN.new
     expect(calc.calculate(2, -4, '+')).to eq(-2)
-  end
-  it "#calculate doesn't divide by 0" do
-    calc = RPN.new
-    expect(calc.calculate(10, 0, '/')).to be_a(Float)
   end
 end
 
