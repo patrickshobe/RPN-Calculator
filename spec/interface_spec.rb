@@ -21,5 +21,10 @@ it 'should exist' do
     result = interface.validate_operator('+')
     expect(result).to eq('+')
   end
+  it '#validate_expression success' do
+    interface = Interface.new
+    result = interface.validate_expression('1 1 +')
+    expect(result).to eq('1 1 +')
+  end
 end
 
